@@ -20,6 +20,7 @@ function App() {
     newArray[x][y] = 1;
     console.log('new', newArray);
     setGrid(newArray);
+    findNeighborsOfGivenCell([x, y]);
   };
 
   const setRandomCells = () => {
@@ -31,6 +32,32 @@ function App() {
       });
     });
     setGrid(newArray);
+  };
+
+  const possibleNeighbours = [
+    [-1, -1],
+    [0, -1],
+    [1, -1],
+    [-1, 0],
+    [1, 0],
+    [-1, 1],
+    [0, 1],
+    [1, 1],
+  ];
+
+  const findNeighborsOfGivenCell = ([x, y]) => {
+    console.log([x, y]);
+    let neighborsCount = 0;
+    possibleNeighbours.forEach((neighbor) => {
+      const newX = x + neighbor[0];
+      const newY = y + neighbor[1];
+      if (newX >= 0 && newX < rowCount && newY >= 0 && newY < colCount) {
+        const isNeighbor = grid[newX][newY] === 1;
+        isNeighbor && neighborsCount++;
+      }
+    });
+    console.log('neighborsCount', neighborsCount);
+    return neighborsCount;
   };
 
   return (
