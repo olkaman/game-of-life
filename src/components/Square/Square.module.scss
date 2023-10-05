@@ -1,10 +1,18 @@
 .square {
-  border: solid 0.5px lightgray;
+  border: solid 0.5px #fff;
   height: 20px;
   width: 20px;
-  background-color: #fff;
+  background-color: rgb(95, 174, 150);
+  border-radius: 3px;
 
   &.alive {
-    background-color: red;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s linear;
+  }
+
+  &.dead {
+    opacity: 0.1;
+    transition: opacity 0.2s ease-out;
   }
 }
