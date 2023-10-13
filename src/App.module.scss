@@ -3,10 +3,10 @@
 .mainContainer {
   flex-flow: row nowrap;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
 
   .board {
-    width: calc(100% - 300px);
+    width: calc(100vw - 300px);
     margin-left: 100px;
   }
 
@@ -14,5 +14,7 @@
     width: 300px;
     background-color: $light-mint;
     padding: 24px;
+    height: 100vh;
+    box-sizing: border-box;
   }
 }

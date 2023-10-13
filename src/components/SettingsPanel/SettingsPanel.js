@@ -59,6 +59,10 @@ function SettingsPanel({ setGrid, grid, rowCount, colCount, createGrid }) {
       <Button handleClick={setRandomCells}>Set random cells</Button>
       <Button handleClick={playLifeGame}>{gameIsOn ? 'Stop game' : 'Make cells live!'}</Button>
       <Button handleClick={() => setGrid(createGrid)}>Clear board</Button>
+      Rules of{' '}
+      <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life' target='blank'>
+        Conway's Game of life
+      </a>
     </div>
   );
 }

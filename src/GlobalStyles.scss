@@ -1,6 +1,11 @@
 $light-mint: #5fae96;
 $white: #fff;
 
+body {
+  padding: 0;
+  margin: 0;
+}
+
 .flex {
   display: flex;
 }
