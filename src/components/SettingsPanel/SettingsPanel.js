@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import Button from '../Button/Button';
 
 function SettingsPanel({ setGrid, grid, rowCount, colCount, createGrid }) {
   const previousGrid = useRef();
@@ -55,9 +56,9 @@ function SettingsPanel({ setGrid, grid, rowCount, colCount, createGrid }) {
   };
   return (
     <div>
-      <button onClick={setRandomCells}>Set random cells</button>
-      <button onClick={playLifeGame}>{gameIsOn ? 'Stop game' : 'Make cells live!'}</button>
-      <button onClick={() => setGrid(createGrid)}>Clear board</button>
+      <Button handleClick={setRandomCells}>Set random cells</Button>
+      <Button handleClick={playLifeGame}>{gameIsOn ? 'Stop game' : 'Make cells live!'}</Button>
+      <Button handleClick={() => setGrid(createGrid)}>Clear board</Button>
     </div>
   );
 }
