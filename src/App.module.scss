@@ -1,0 +1,18 @@
+@import './GlobalStyles.scss';
+
+.mainContainer {
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 100%;
+
+  .board {
+    width: calc(100% - 300px);
+    margin-left: 100px;
+  }
+
+  .settingsPanel {
+    width: 300px;
+    background-color: $light-mint;
+    padding: 24px;
+  }
+}
