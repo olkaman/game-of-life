@@ -3,11 +3,12 @@
 .mainContainer {
   flex-flow: row nowrap;
   justify-content: space-between;
-  width: 100vw;
+  width: 100%;
 
   .board {
-    width: calc(100vw - 300px);
-    margin-left: 100px;
+    width: calc(100% - 300px);
+    padding: 24px;
+    box-sizing: border-box;
   }
 
   .settingsPanel {

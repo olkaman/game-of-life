@@ -3,18 +3,20 @@ import Button from '../Button/Button';
 
 function SettingsPanel({ setGrid, grid, rowCount, colCount, createGrid }) {
   const previousGrid = useRef();
-  const [gameIsOn, setGameIsOn] = useState(false);
+  const [timerId, setTimerId] = useState();
 
   useEffect(() => {
     previousGrid.current = grid;
   }, [grid]);
 
   const playLifeGame = () => {
-    const newGrid = JSON.parse(JSON.stringify(previousGrid.current));
+    const newGrid = previousGrid.current.map((arr) => {
+      return arr.slice();
+    });
     previousGrid.current.forEach((row, rowIndex) => {
       row.forEach((cell, colIndex) => {
         const neighbors = findNeighborsOfGivenCell([rowIndex, colIndex]);
-        console.log('neighbors', neighbors, rowIndex, colIndex);
+
         if (neighbors < 2 || neighbors > 3) {
           newGrid[rowIndex][colIndex] = 0;
         }
@@ -25,9 +27,12 @@ function SettingsPanel({ setGrid, grid, rowCount, colCount, createGrid }) {
     });
 
     setGrid(newGrid);
-    setTimeout(() => {
+
+    const timerId = setTimeout(() => {
       playLifeGame();
     }, 400);
+
+    setTimerId(timerId);
   };
 
   const setRandomCells = () => {
@@ -54,11 +59,28 @@ function SettingsPanel({ setGrid, grid, rowCount, colCount, createGrid }) {
 
     return neighborsCount;
   };
+
+  const pauseGame = () => {
+    clearTimeout(timerId);
+    setTimerId(0);
+  };
+
+  console.log(timerId);
   return (
     <div>
       <Button handleClick={setRandomCells}>Set random cells</Button>
-      <Button handleClick={playLifeGame}>{gameIsOn ? 'Stop game' : 'Make cells live!'}</Button>
-      <Button handleClick={() => setGrid(createGrid)}>Clear board</Button>
+      <Button handleClick={playLifeGame} disabled={timerId > 0}>
+        Make cells live!
+      </Button>
+      <Button handleClick={pauseGame}>Pause game</Button>
+      <Button
+        handleClick={() => {
+          pauseGame();
+          setGrid(createGrid);
+        }}
+      >
+        Clear board
+      </Button>
       Rules of{' '}
       <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life' target='blank'>
         Conway's Game of life

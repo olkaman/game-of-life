@@ -5,8 +5,8 @@ import Board from './components/Board/Board';
 import SettingsPanel from './components/SettingsPanel/SettingsPanel';
 import clsx from 'clsx';
 
-const rowCount = 30;
-const colCount = 40;
+const rowCount = Math.floor((window.innerHeight - 48) / 20);
+const colCount = Math.floor((window.innerWidth - 348) / 20);
 
 function App() {
   const [grid, setGrid] = useState(createGrid);
@@ -28,6 +28,7 @@ export default App;
 
 const createGrid = () => {
   const row = [];
+  console.log('sdfs');
   for (let i = 0; i < rowCount; i++) {
     row.push(Array(colCount).fill(0));
   }
