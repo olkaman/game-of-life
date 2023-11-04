@@ -1,6 +1,7 @@
 import Square from '../Square/Square';
+import { rowCount, colCount } from '../../utils/boardSize';
 
-function Board({ rowCount, colCount, grid, setGrid }) {
+function Board({ grid, setGrid }) {
   const setCellState = (x, y) => {
     const newGrid = [...grid];
     newGrid[x][y] = newGrid[x][y] === 0 ? 1 : 0;

@@ -1,15 +1,20 @@
 import { useEffect, useState, useRef } from 'react';
 import Button from '../Button/Button';
+import { square, zFigure, line, glider } from '../../utils/figures.js';
+import { rowCount, colCount } from '../../utils/boardSize';
+import { useCreateGrid } from '../../hooks/useCreateGrid';
 
-function SettingsPanel({ setGrid, grid, rowCount, colCount, createGrid }) {
+function SettingsPanel({ setGrid, grid }) {
   const previousGrid = useRef();
   const [timerId, setTimerId] = useState();
+  const createGrid = useCreateGrid();
 
   useEffect(() => {
     previousGrid.current = grid;
   }, [grid]);
 
   const playLifeGame = () => {
+    // TODO grid does noti include 1 return
     const newGrid = previousGrid.current.map((arr) => {
       return arr.slice();
     });
@@ -65,10 +70,30 @@ function SettingsPanel({ setGrid, grid, rowCount, colCount, createGrid }) {
     setTimerId(0);
   };
 
-  console.log(timerId);
+  function setFigure(figure) {
+    const halfBoardWidth = Math.ceil((colCount - figure[0].length) / 2);
+    const halfBoardHeight = Math.ceil((rowCount - figure.length) / 2);
+    const figureOffsetTop = Math.ceil(halfBoardHeight - figure.length / 2);
+
+    const newGrid = [...previousGrid.current];
+    newGrid.forEach((gridRow, gridRowIndex) => {
+      figure.forEach((figureRow, figureRowIndex) => {
+        if (gridRowIndex - figureRowIndex === figureOffsetTop) {
+          gridRow.splice(halfBoardWidth, figureRow.length, ...figureRow);
+        }
+      });
+    });
+
+    setGrid(newGrid);
+  }
+
   return (
     <div>
       <Button handleClick={setRandomCells}>Set random cells</Button>
+      <Button handleClick={() => setFigure(glider)}>Set glider</Button>
+      <Button handleClick={() => setFigure(square)}>Set square</Button>
+      <Button handleClick={() => setFigure(zFigure)}>Set Zfigure</Button>
+      <Button handleClick={() => setFigure(line)}>Set line</Button>
       <Button handleClick={playLifeGame} disabled={timerId > 0}>
         Make cells live!
       </Button>
