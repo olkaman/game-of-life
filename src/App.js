@@ -4,11 +4,11 @@ import styles from './App.module.scss';
 import Board from './components/Board/Board';
 import SettingsPanel from './components/SettingsPanel/SettingsPanel';
 import clsx from 'clsx';
-
-const rowCount = Math.floor((window.innerHeight - 48) / 20);
-const colCount = Math.floor((window.innerWidth - 348) / 20);
+import { rowCount, colCount } from './utils/boardSize.js';
+import { useCreateGrid } from './hooks/useCreateGrid.js';
 
 function App() {
+  const createGrid = useCreateGrid();
   const [grid, setGrid] = useState(createGrid);
 
   return (
@@ -25,12 +25,3 @@ function App() {
 }
 
 export default App;
-
-const createGrid = () => {
-  const row = [];
-  console.log('sdfs');
-  for (let i = 0; i < rowCount; i++) {
-    row.push(Array(colCount).fill(0));
-  }
-  return row;
-};
