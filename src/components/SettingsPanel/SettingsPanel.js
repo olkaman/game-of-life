@@ -1,8 +1,9 @@
 import { useEffect, useState, useRef } from 'react';
 import Button from '../Button/Button';
-import { square, zFigure, line, glider } from '../../utils/figures.js';
+import { square, zFigure, line, glider, pulsar } from '../../utils/figures.js';
 import { rowCount, colCount } from '../../utils/boardSize';
 import { useCreateGrid } from '../../hooks/useCreateGrid';
+import { possibleNeighbors } from '../../utils/possibleNeighbors';
 
 function SettingsPanel({ setGrid, grid }) {
   const previousGrid = useRef();
@@ -53,7 +54,7 @@ function SettingsPanel({ setGrid, grid }) {
 
   const findNeighborsOfGivenCell = ([x, y]) => {
     let neighborsCount = 0;
-    possibleNeighbours.forEach((neighbor) => {
+    possibleNeighbors.forEach((neighbor) => {
       const newX = x + neighbor[0];
       const newY = y + neighbor[1];
       if (newX >= 0 && newX < rowCount && newY >= 0 && newY < colCount) {
@@ -94,6 +95,7 @@ function SettingsPanel({ setGrid, grid }) {
       <Button handleClick={() => setFigure(square)}>Set square</Button>
       <Button handleClick={() => setFigure(zFigure)}>Set Zfigure</Button>
       <Button handleClick={() => setFigure(line)}>Set line</Button>
+      <Button handleClick={() => setFigure(pulsar)}>Set pulsar</Button>
       <Button handleClick={playLifeGame} disabled={timerId > 0}>
         Make cells live!
       </Button>
@@ -115,14 +117,3 @@ function SettingsPanel({ setGrid, grid }) {
 }
 
 export default SettingsPanel;
-
-const possibleNeighbours = [
-  [-1, -1],
-  [0, -1],
-  [1, -1],
-  [-1, 0],
-  [1, 0],
-  [-1, 1],
-  [0, 1],
-  [1, 1],
-];
