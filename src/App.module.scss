@@ -6,13 +6,13 @@
   width: 100%;
 
   .board {
-    width: calc(100% - 300px);
+    width: calc(100% - $side-menu-width);
     padding: 24px;
     box-sizing: border-box;
   }
 
   .settingsPanel {
-    width: 300px;
+    width: $side-menu-width;
     background-color: $light-mint;
     padding: 24px;
     height: 100vh;

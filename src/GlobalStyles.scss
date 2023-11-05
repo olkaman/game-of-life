@@ -1,5 +1,12 @@
 $light-mint: #5fae96;
 $white: #fff;
+$square-size: 20px;
+$side-menu-width: 300px;
+
+:export {
+  squareSize: $square-size;
+  sideMenuWidth: $side-menu-width;
+}
 
 body {
   padding: 0;

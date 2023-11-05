@@ -1,5 +1,5 @@
 import Square from '../Square/Square';
-import { rowCount, colCount } from '../../utils/boardSize';
+import { rowCount, colCount, squareSize } from '../../utils/boardSize';
 
 function Board({ grid, setGrid }) {
   const setCellState = (x, y) => {
@@ -9,7 +9,7 @@ function Board({ grid, setGrid }) {
   };
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: `repeat(${colCount}, 20px)`, gridTemplateRows: `repeat(${rowCount}, 20px)` }}>
+    <div style={{ display: 'grid', gridTemplateColumns: `repeat(${colCount}, ${squareSize}px)`, gridTemplateRows: `repeat(${rowCount}, ${squareSize}px)` }}>
       {grid.map((row, rowIndex) =>
         row.map((col, colIndex) => {
           const isAlive = grid[rowIndex][colIndex] === 1;

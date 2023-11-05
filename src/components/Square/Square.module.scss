@@ -2,8 +2,8 @@
 
 .square {
   border: solid 0.5px $white;
-  height: 20px;
-  width: 20px;
+  height: $square-size;
+  width: $square-size;
   background-color: $light-mint;
   border-radius: 3px;
 
