@@ -74,12 +74,11 @@ function SettingsPanel({ setGrid, grid }) {
   function setFigure(figure) {
     const halfBoardWidth = Math.ceil((colCount - figure[0].length) / 2);
     const halfBoardHeight = Math.ceil((rowCount - figure.length) / 2);
-    const figureOffsetTop = Math.ceil(halfBoardHeight - figure.length / 2);
 
     const newGrid = [...previousGrid.current];
     newGrid.forEach((gridRow, gridRowIndex) => {
       figure.forEach((figureRow, figureRowIndex) => {
-        if (gridRowIndex - figureRowIndex === figureOffsetTop) {
+        if (gridRowIndex - figureRowIndex === halfBoardHeight) {
           gridRow.splice(halfBoardWidth, figureRow.length, ...figureRow);
         }
       });
