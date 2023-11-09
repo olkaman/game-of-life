@@ -13,10 +13,8 @@ function App() {
 
   return (
     <main className={clsx(styles.mainContainer, 'flex')}>
-      <section className={styles.settingsPanel}>
-        <h2>Game of life</h2>
-        <SettingsPanel rowCount={rowCount} colCount={colCount} grid={grid} setGrid={setGrid} createGrid={createGrid} />
-      </section>
+      <SettingsPanel rowCount={rowCount} colCount={colCount} grid={grid} setGrid={setGrid} createGrid={createGrid} />
+
       <section className={styles.board}>
         <Board rowCount={rowCount} colCount={colCount} grid={grid} setGrid={setGrid} />
       </section>
