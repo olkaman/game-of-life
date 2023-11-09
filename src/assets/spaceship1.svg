@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="55px" height="55px" viewBox="0 0 55 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>spaceship1</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Large" transform="translate(-27, -495)">
+            <g id="spaceship1" transform="translate(27.1332, 495.1654)">
+                <rect id="Rectangle-Copy-44" fill="#FFFFFF" x="0" y="0" width="54" height="54" rx="8"></rect>
+                <g id="Group-2" transform="translate(8.9286, 12.5)" fill="#5FAE96" stroke="#FFFFFF">
+                    <rect id="Rectangle-Copy-12" x="21.6427242" y="7.25" width="7.25" height="7.25" rx="1"></rect>
+                    <rect id="Rectangle-Copy-36" x="21.6427242" y="14.5" width="7.25" height="7.25" rx="1"></rect>
+                    <rect id="Rectangle-Copy-38" x="14.3927242" y="14.5" width="7.25" height="7.25" rx="1"></rect>
+                    <rect id="Rectangle-Copy-37" x="14.3927242" y="21.75" width="7.25" height="7.25" rx="1"></rect>
+                    <rect id="Rectangle-Copy-40" x="7.14272424" y="14.5" width="7.25" height="7.25" rx="1"></rect>
+                    <rect id="Rectangle-Copy-39" x="7.14272424" y="21.75" width="7.25" height="7.25" rx="1"></rect>
+                    <rect id="Rectangle-Copy-42" x="0" y="7.25" width="7.25" height="7.25" rx="1"></rect>
+                    <rect id="Rectangle-Copy-43" x="7.25" y="7.25" width="7.25" height="7.25" rx="1"></rect>
+                    <rect id="Rectangle-Copy-41" x="0" y="14.5" width="7.25" height="7.25" rx="1"></rect>
+                    <rect id="Rectangle-Copy-11" x="28.8927242" y="7.25" width="7.25" height="7.25" rx="1"></rect>
+                    <rect id="Rectangle-Copy-9" x="21.6427242" y="0" width="7.25" height="7.25" rx="1"></rect>
+                    <rect id="Rectangle-Copy-17" x="14.3927242" y="0" width="7.25" height="7.25" rx="1"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
