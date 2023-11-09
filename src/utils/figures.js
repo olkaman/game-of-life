@@ -3,7 +3,7 @@ export const square = [
   [1, 1],
 ];
 
-export const zFigure = [
+export const toad = [
   [0, 0, 0, 0],
   [1, 1, 1, 0],
   [0, 1, 1, 1],
