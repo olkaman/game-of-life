@@ -1,0 +1,57 @@
+@import '../../GlobalStyles.scss';
+
+.playerBoard {
+  align-items: center;
+  justify-content: space-between;
+  background-color: $darker-gray;
+  border-radius: 70px;
+  padding: 16px;
+
+  .buttons {
+    background-color: $black;
+    border: none;
+    border-radius: 26px;
+    cursor: pointer;
+
+    &.play {
+      height: 44px;
+      width: 44px;
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 10px;
+        left: 15px;
+      }
+
+      &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+    }
+
+    &.pause {
+      height: 44px;
+      width: 44px;
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 13px;
+        left: 14px;
+      }
+    }
+
+    &.clear {
+      color: $text-color-on-dark;
+      text-transform: uppercase;
+      font-family: $main-font-family;
+      font-size: $text-small-size;
+      padding: 14px 20px;
+    }
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
