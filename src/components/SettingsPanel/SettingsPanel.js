@@ -1,24 +1,30 @@
 import { useEffect, useState, useRef } from 'react';
 import Button from '../Button/Button';
-import { allFigures } from '../../utils/figures.js';
 import { rowCount, colCount } from '../../utils/boardSize';
 import { useCreateGrid } from '../../hooks/useCreateGrid';
 import { possibleNeighbors } from '../../utils/possibleNeighbors';
 import styles from './SettingsPanel.module.scss';
-import FigureButton from '../FigureButton/FigureButton';
-import { generateKey } from '../../utils/generateKey';
+import { useGameStore } from '../../store/store';
+import AddFigures from '../AddFigures/AddFigures';
+import Player from '../Player/Player';
 
-function SettingsPanel({ setGrid, grid }) {
+function SettingsPanel() {
   const previousGrid = useRef();
+  const previousCounter = useRef();
   const [timerId, setTimerId] = useState();
+  const [counter, setCounter] = useState(0);
   const createGrid = useCreateGrid();
+  const grid = useGameStore((state) => state.grid);
+  const setGrid = useGameStore((state) => state.setGrid);
 
   useEffect(() => {
     previousGrid.current = grid;
-  }, [grid]);
+    previousCounter.current = counter;
+  }, [grid, counter]);
 
   const playLifeGame = () => {
     // TODO grid does noti include 1 return
+    setCounter(previousCounter.current + 1);
     const newGrid = previousGrid.current.map((arr) => {
       return arr.slice();
     });
@@ -74,22 +80,6 @@ function SettingsPanel({ setGrid, grid }) {
     setTimerId(0);
   };
 
-  function setFigure(figure) {
-    const halfBoardWidth = Math.ceil((colCount - figure[0].length) / 2);
-    const halfBoardHeight = Math.ceil((rowCount - figure.length) / 2);
-
-    const newGrid = [...previousGrid.current];
-    newGrid.forEach((gridRow, gridRowIndex) => {
-      figure.forEach((figureRow, figureRowIndex) => {
-        if (gridRowIndex - figureRowIndex === halfBoardHeight) {
-          gridRow.splice(halfBoardWidth, figureRow.length, ...figureRow);
-        }
-      });
-    });
-
-    setGrid(newGrid);
-  }
-
   return (
     <section className={styles.settingsPanel}>
       <div className={styles.wrapper}>
@@ -98,40 +88,12 @@ function SettingsPanel({ setGrid, grid }) {
           Select cells manually <br />
           or select ready figures
         </p>
+        <p>Number of cycles: {counter}</p>
         <Button handleClick={setRandomCells} type='primary'>
           Set random cells
         </Button>
-        <p>Still lives</p>
-        <section className='flex'>
-          {allFigures.stillLives.map((figure) => {
-            return <FigureButton key={generateKey(figure.name)} figureImg={figure.link} handleClick={() => setFigure(figure.shape)} figureName={figure.name} />;
-          })}
-        </section>
-        <p>Oscillators</p>
-        <section className='flex'>
-          {allFigures.oscillators.map((figure) => {
-            return <FigureButton key={generateKey(figure.name)} figureImg={figure.link} handleClick={() => setFigure(figure.shape)} figureName={figure.name} />;
-          })}
-        </section>
-        <p>Spaceships</p>
-        <section className='flex'>
-          {allFigures.spaceships.map((figure) => {
-            return <FigureButton key={generateKey(figure.name)} figureImg={figure.link} handleClick={() => setFigure(figure.shape)} figureName={figure.name} />;
-          })}
-        </section>
-        <p>Lines</p>
-        <Button handleClick={playLifeGame} disabled={timerId > 0}>
-          Make cells live!
-        </Button>
-        <Button handleClick={pauseGame}>Pause game</Button>
-        <Button
-          handleClick={() => {
-            pauseGame();
-            setGrid(createGrid);
-          }}
-        >
-          Clear board
-        </Button>
+        <AddFigures />
+        <Player />
         Rules of{' '}
         <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life' target='blank'>
           Conway's Game of life

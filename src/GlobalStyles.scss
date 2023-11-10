@@ -1,6 +1,8 @@
 $light-mint: #5fae96;
 $white: #fff;
 $dark-gray: #333;
+$darker-gray: #333634;
+$black: #0d0f0e;
 $square-size: 20px;
 $side-menu-width: 300px;
 $main-font-family: 'Noto Sans', sans-serif;
@@ -32,4 +34,8 @@ h2 {
 
 p {
   margin-top: 0;
+}
+
+button {
+  transition: all 0.4s ease-in-out;
 }
