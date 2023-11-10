@@ -41,6 +41,17 @@ const beeHive = {
   ],
 };
 
+const loaf = {
+  name: 'Loaf',
+  link: loafLink,
+  shape: [
+    [0, 1, 1, 0],
+    [1, 0, 0, 1],
+    [0, 1, 0, 1],
+    [0, 0, 1, 0],
+  ],
+};
+
 const blinker = {
   name: 'Blinker',
   link: blinkerLink,
@@ -50,7 +61,16 @@ const blinker = {
 const penthadecathlon = {
   name: 'Penthadecathlon',
   link: penthadecathlonLink,
-  shape: [],
+  shape: [
+    [1, 1, 1],
+    [1, 0, 1],
+    [1, 1, 1],
+    [1, 1, 1],
+    [1, 1, 1],
+    [1, 1, 1],
+    [1, 0, 1],
+    [1, 1, 1],
+  ],
 };
 
 const toad = {
@@ -94,11 +114,43 @@ const pulsar = {
   ],
 };
 
+const spaceshipS = {
+  name: 'Spaceship S',
+  link: spaceshipSLink,
+  shape: [
+    [0, 0, 1, 1, 0],
+    [1, 1, 0, 1, 1],
+    [1, 1, 1, 1, 0],
+    [0, 1, 1, 0, 0],
+  ],
+};
+
+const spaceshipM = {
+  name: 'Spaceship M',
+  link: spaceshipMLink,
+  shape: [
+    [0, 0, 0, 1, 1, 0],
+    [1, 1, 1, 0, 1, 1],
+    [1, 1, 1, 1, 1, 0],
+    [0, 1, 1, 1, 0, 0],
+  ],
+};
+
+const spaceshipL = {
+  name: 'Spaceship L',
+  link: spaceshipLLink,
+  shape: [
+    [0, 0, 0, 0, 1, 1, 0],
+    [1, 1, 1, 1, 0, 1, 1],
+    [1, 1, 1, 1, 1, 1, 0],
+    [0, 1, 1, 1, 1, 0, 0],
+  ],
+};
 const line = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]];
 
 export const allFigures = {
-  stillLives: [square, tub, beeHive],
-  oscillators: [blinker, toad, pulsar],
-  spaceships: [glider],
+  stillLives: [square, tub, beeHive, loaf],
+  oscillators: [blinker, toad, pulsar, penthadecathlon],
+  spaceships: [glider, spaceshipS, spaceshipM, spaceshipL],
   lines: [],
 };
