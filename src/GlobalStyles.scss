@@ -1,7 +1,13 @@
 $light-mint: #5fae96;
 $white: #fff;
+$dark-gray: #333;
 $square-size: 20px;
 $side-menu-width: 300px;
+$main-font-family: 'Noto Sans', sans-serif;
+$text-color-on-dark: rgba(255, 255, 255, 0.8);
+$text-body-size: 14px;
+$text-small-size: 12px;
+$h2-text-size: 34px;
 
 :export {
   squareSize: $square-size;
@@ -11,8 +17,19 @@ $side-menu-width: 300px;
 body {
   padding: 0;
   margin: 0;
+  font-family: $main-font-family;
+  font-size: $text-body-size;
+  font-weight: 300;
 }
 
 .flex {
   display: flex;
+}
+
+h2 {
+  font-size: $h2-text-size;
+}
+
+p {
+  margin-top: 0;
 }

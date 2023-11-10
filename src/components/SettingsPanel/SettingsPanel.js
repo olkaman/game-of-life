@@ -1,9 +1,12 @@
 import { useEffect, useState, useRef } from 'react';
 import Button from '../Button/Button';
-import { square, zFigure, line, glider, pulsar } from '../../utils/figures.js';
+import { allFigures } from '../../utils/figures.js';
 import { rowCount, colCount } from '../../utils/boardSize';
 import { useCreateGrid } from '../../hooks/useCreateGrid';
 import { possibleNeighbors } from '../../utils/possibleNeighbors';
+import styles from './SettingsPanel.module.scss';
+import FigureButton from '../FigureButton/FigureButton';
+import { generateKey } from '../../utils/generateKey';
 
 function SettingsPanel({ setGrid, grid }) {
   const previousGrid = useRef();
@@ -88,30 +91,53 @@ function SettingsPanel({ setGrid, grid }) {
   }
 
   return (
-    <div>
-      <Button handleClick={setRandomCells}>Set random cells</Button>
-      <Button handleClick={() => setFigure(glider)}>Set glider</Button>
-      <Button handleClick={() => setFigure(square)}>Set square</Button>
-      <Button handleClick={() => setFigure(zFigure)}>Set Zfigure</Button>
-      <Button handleClick={() => setFigure(line)}>Set line</Button>
-      <Button handleClick={() => setFigure(pulsar)}>Set pulsar</Button>
-      <Button handleClick={playLifeGame} disabled={timerId > 0}>
-        Make cells live!
-      </Button>
-      <Button handleClick={pauseGame}>Pause game</Button>
-      <Button
-        handleClick={() => {
-          pauseGame();
-          setGrid(createGrid);
-        }}
-      >
-        Clear board
-      </Button>
-      Rules of{' '}
-      <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life' target='blank'>
-        Conway's Game of life
-      </a>
-    </div>
+    <section className={styles.settingsPanel}>
+      <div className={styles.wrapper}>
+        <h2>Game of life</h2>
+        <p>
+          Select cells manually <br />
+          or select ready figures
+        </p>
+        <Button handleClick={setRandomCells} type='primary'>
+          Set random cells
+        </Button>
+        <p>Still lives</p>
+        <section className='flex'>
+          {allFigures.stillLives.map((figure) => {
+            return <FigureButton key={generateKey(figure.name)} figureImg={figure.link} handleClick={() => setFigure(figure.shape)} figureName={figure.name} />;
+          })}
+        </section>
+        <p>Oscillators</p>
+        <section className='flex'>
+          {allFigures.oscillators.map((figure) => {
+            return <FigureButton key={generateKey(figure.name)} figureImg={figure.link} handleClick={() => setFigure(figure.shape)} figureName={figure.name} />;
+          })}
+        </section>
+        <p>Spaceships</p>
+        <section className='flex'>
+          {allFigures.spaceships.map((figure) => {
+            return <FigureButton key={generateKey(figure.name)} figureImg={figure.link} handleClick={() => setFigure(figure.shape)} figureName={figure.name} />;
+          })}
+        </section>
+        <p>Lines</p>
+        <Button handleClick={playLifeGame} disabled={timerId > 0}>
+          Make cells live!
+        </Button>
+        <Button handleClick={pauseGame}>Pause game</Button>
+        <Button
+          handleClick={() => {
+            pauseGame();
+            setGrid(createGrid);
+          }}
+        >
+          Clear board
+        </Button>
+        Rules of{' '}
+        <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life' target='blank'>
+          Conway's Game of life
+        </a>
+      </div>
+    </section>
   );
 }
 
