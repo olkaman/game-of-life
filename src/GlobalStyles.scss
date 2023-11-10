@@ -36,6 +36,15 @@ p {
   margin-top: 0;
 }
 
-button {
+button,
+a {
   transition: all 0.4s ease-in-out;
+}
+
+a {
+  color: $text-color-on-dark;
+
+  &:hover {
+    color: $light-mint;
+  }
 }
