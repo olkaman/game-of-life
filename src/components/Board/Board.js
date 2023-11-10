@@ -1,7 +1,11 @@
 import Square from '../Square/Square';
 import { rowCount, colCount, squareSize } from '../../utils/boardSize';
+import { useGameStore } from '../../store/store';
 
-function Board({ grid, setGrid }) {
+function Board() {
+  const grid = useGameStore((state) => state.grid);
+  const setGrid = useGameStore((state) => state.setGrid);
+
   const setCellState = (x, y) => {
     const newGrid = [...grid];
     newGrid[x][y] = newGrid[x][y] === 0 ? 1 : 0;

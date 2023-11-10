@@ -1,22 +1,25 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
 import './GlobalStyles.scss';
 import styles from './App.module.scss';
 import Board from './components/Board/Board';
 import SettingsPanel from './components/SettingsPanel/SettingsPanel';
 import clsx from 'clsx';
-import { rowCount, colCount } from './utils/boardSize.js';
 import { useCreateGrid } from './hooks/useCreateGrid.js';
+import { useGameStore } from './store/store';
 
 function App() {
   const createGrid = useCreateGrid();
-  const [grid, setGrid] = useState(createGrid);
+  const setGrid = useGameStore((state) => state.setGrid);
+
+  useEffect(() => {
+    setGrid(createGrid);
+  }, []);
 
   return (
     <main className={clsx(styles.mainContainer, 'flex')}>
-      <SettingsPanel rowCount={rowCount} colCount={colCount} grid={grid} setGrid={setGrid} createGrid={createGrid} />
-
+      <SettingsPanel />
       <section className={styles.board}>
-        <Board rowCount={rowCount} colCount={colCount} grid={grid} setGrid={setGrid} />
+        <Board />
       </section>
     </main>
   );
