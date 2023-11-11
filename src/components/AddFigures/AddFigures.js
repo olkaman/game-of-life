@@ -11,13 +11,13 @@ import clsx from 'clsx';
 export default function AddFigures() {
   const grid = useGameStore((state) => state.grid);
   const setGrid = useGameStore((state) => state.setGrid);
-  const [openFigures, setOpenFigures] = useState(false);
+  const [isFiguresPanelOpen, setIsFiguresPanelOpen] = useState(false);
   const [lineInputValue, setLineInputValue] = useState(3);
   const [line, setLine] = useState([Array(3).fill(1)]);
   console.log(lineInputValue, line);
 
   function setFigure(figure) {
-    setOpenFigures(false);
+    setIsFiguresPanelOpen(false);
     setLineInputValue(3);
     const halfBoardWidth = Math.ceil((colCount - figure[0].length) / 2);
     const halfBoardHeight = Math.ceil((rowCount - figure.length) / 2);
@@ -42,8 +42,8 @@ export default function AddFigures() {
 
   return (
     <>
-      <Button handleClick={() => setOpenFigures(!openFigures)}>{openFigures ? '-' : '+'} Add figure</Button>
-      {openFigures && (
+      <Button handleClick={() => setIsFiguresPanelOpen(!isFiguresPanelOpen)}>{isFiguresPanelOpen ? '-' : '+'} Add figure</Button>
+      {isFiguresPanelOpen && (
         <section className={styles.wrapper}>
           <h5>Still lives</h5>
           <section className={clsx(styles.picturesWrapper, 'flex')}>

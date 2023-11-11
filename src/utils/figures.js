@@ -10,7 +10,6 @@ import gliderLink from '../assets/glider.svg';
 import spaceshipSLink from '../assets/spaceship1.svg';
 import spaceshipMLink from '../assets/spaceship2.svg';
 import spaceshipLLink from '../assets/spaceship3.svg';
-import lineLink from '../assets/line.svg';
 
 const square = {
   name: 'Square',

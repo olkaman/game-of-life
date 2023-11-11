@@ -6,6 +6,7 @@
   background-color: $darker-gray;
   border-radius: 70px;
   padding: 16px;
+  margin: 24px 0 16px 0;
 
   .buttons {
     background-color: $black;
@@ -57,7 +58,6 @@
 }
 
 .counter {
-  margin-top: 16px;
   text-align: center;
   align-items: center;
   justify-content: center;
