@@ -55,3 +55,19 @@
     }
   }
 }
+
+.counter {
+  margin-top: 16px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  .circle {
+    margin-right: 8px;
+    height: 8px;
+    width: 8px;
+    border-radius: 5px;
+    background-color: $light-mint;
+    display: block;
+  }
+}

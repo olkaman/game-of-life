@@ -7,16 +7,8 @@ import Player from '../Player/Player';
 import clsx from 'clsx';
 
 function SettingsPanel() {
-  const previousGrid = useRef();
-  const previousCounter = useRef();
-  const [counter, setCounter] = useState(0);
   const grid = useGameStore((state) => state.grid);
   const setGrid = useGameStore((state) => state.setGrid);
-
-  useEffect(() => {
-    previousGrid.current = grid;
-    previousCounter.current = counter;
-  }, [grid, counter]);
 
   const setRandomCells = () => {
     const newGrid = [...grid];
@@ -39,7 +31,6 @@ function SettingsPanel() {
               Select cells manually <br />
               or select ready figures
             </p>
-            <p>Number of cycles: {counter}</p>
           </section>
           <Player />
           <section className={styles.buttons}>

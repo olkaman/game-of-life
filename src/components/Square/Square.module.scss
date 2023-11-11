@@ -6,7 +6,11 @@
   width: $square-size;
   background-color: $light-mint;
   border-radius: 3px;
+  cursor: pointer;
 
+  &:hover {
+    background-color: $mint;
+  }
   &.alive {
     visibility: visible;
     opacity: 1;
