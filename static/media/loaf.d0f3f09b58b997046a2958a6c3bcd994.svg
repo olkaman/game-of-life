@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="55px" height="55px" viewBox="0 0 55 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>loaf</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Large" transform="translate(-217, -370)">
+            <g id="loaf" transform="translate(217.881, 370.9234)">
+                <rect id="Rectangle-Copy-80" fill="#FFFFFF" x="0" y="0" width="54" height="54" rx="8"></rect>
+                <g id="Group-13" transform="translate(6.7637, 6.75)" fill="#5FAE96" stroke="#FFFFFF">
+                    <rect id="Rectangle-Copy-79" x="0" y="10.1181295" width="10.1181295" height="10.1181295" rx="2"></rect>
+                    <rect id="Rectangle-Copy-78" x="10.1181295" y="0" width="10.1181295" height="10.1181295" rx="2"></rect>
+                    <rect id="Rectangle-Copy-69" x="10.1181295" y="20.2362591" width="10.1181295" height="10.1181295" rx="2"></rect>
+                    <rect id="Rectangle-Copy-81" x="20.2362591" y="30.3818705" width="10.1181295" height="10.1181295" rx="2"></rect>
+                    <rect id="Rectangle-Copy-77" x="30.3543886" y="10.1181295" width="10.1181295" height="10.1181295" rx="2"></rect>
+                    <rect id="Rectangle-Copy-76" x="20.2362591" y="0" width="10.1181295" height="10.1181295" rx="2"></rect>
+                    <rect id="Rectangle-Copy-75" x="30.3543886" y="20.2362591" width="10.1181295" height="10.1181295" rx="2"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,13 +1,28 @@
 {
   "files": {
-    "main.css": "/game-of-life/static/css/main.af5368a8.css",
-    "main.js": "/game-of-life/static/js/main.7d095e53.js",
+    "main.css": "/game-of-life/static/css/main.6537ab29.css",
+    "main.js": "/game-of-life/static/js/main.bfccf1be.js",
+    "static/media/background.jpg": "/game-of-life/static/media/background.1e323ab5444f5b51b748.jpg",
+    "static/media/pulsar.svg": "/game-of-life/static/media/pulsar.b3bc5fa1345bf101070fa8b4261300f2.svg",
+    "static/media/penthadecathlon.svg": "/game-of-life/static/media/penthadecathlon.0a20b8bdb401a9c8a256b653ee297cd7.svg",
+    "static/media/spaceship3.svg": "/game-of-life/static/media/spaceship3.0a4dab73caafba38fb880fe103214477.svg",
+    "static/media/spaceship2.svg": "/game-of-life/static/media/spaceship2.38427d5af5ac1476c982f6701a86bcfe.svg",
+    "static/media/spaceship1.svg": "/game-of-life/static/media/spaceship1.ff4b3732391b0b90786905dbeb8f22bc.svg",
+    "static/media/loaf.svg": "/game-of-life/static/media/loaf.d0f3f09b58b997046a2958a6c3bcd994.svg",
+    "static/media/bee-hive.svg": "/game-of-life/static/media/bee-hive.dacf529f42eba90172569596d0d1c9a3.svg",
+    "static/media/toad.svg": "/game-of-life/static/media/toad.4fb32d375159f2feba63a5c5e5e1c573.svg",
+    "static/media/tub.svg": "/game-of-life/static/media/tub.16a87cae527f0a5e03f9602efd0771de.svg",
+    "static/media/square.svg": "/game-of-life/static/media/square.a9ecdfec29d44f083ebe95fa34a30546.svg",
+    "static/media/glider.svg": "/game-of-life/static/media/glider.4a7bd5a650319d9695f0064f9b83b759.svg",
+    "static/media/pause.svg": "/game-of-life/static/media/pause.5a5b1a7ad78016723d014fe41ed3ca16.svg",
+    "static/media/blinker.svg": "/game-of-life/static/media/blinker.2ccd1a5f33094ac41d1c96894e5b3a65.svg",
     "index.html": "/game-of-life/index.html",
-    "main.af5368a8.css.map": "/game-of-life/static/css/main.af5368a8.css.map",
-    "main.7d095e53.js.map": "/game-of-life/static/js/main.7d095e53.js.map"
+    "static/media/play.svg": "/game-of-life/static/media/play.e8bd115217fc92f92103d1282c7a7ef9.svg",
+    "main.6537ab29.css.map": "/game-of-life/static/css/main.6537ab29.css.map",
+    "main.bfccf1be.js.map": "/game-of-life/static/js/main.bfccf1be.js.map"
   },
   "entrypoints": [
-    "static/css/main.af5368a8.css",
-    "static/js/main.7d095e53.js"
+    "static/css/main.6537ab29.css",
+    "static/js/main.bfccf1be.js"
   ]
 }
