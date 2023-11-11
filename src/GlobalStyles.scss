@@ -2,7 +2,7 @@ $light-mint: #5fae96;
 $mint: #017451;
 $white: #fff;
 $dark-gray: #333;
-$darker-gray: #333634;
+$darker-gray: #313131;
 $black: #0d0f0e;
 $square-size: 20px;
 $side-menu-width: 300px;
@@ -10,7 +10,6 @@ $main-font-family: 'Noto Sans', sans-serif;
 $text-color-on-dark: rgba(255, 255, 255, 0.8);
 $text-body-size: 14px;
 $text-small-size: 12px;
-$h2-text-size: 34px;
 
 :export {
   squareSize: $square-size;
@@ -30,7 +29,14 @@ body {
 }
 
 h2 {
-  font-size: $h2-text-size;
+  font-size: 34px;
+  font-weight: 300;
+}
+
+h5 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 12px;
 }
 
 p {
@@ -48,4 +54,10 @@ a {
   &:hover {
     color: $light-mint;
   }
+}
+
+input {
+  padding: 14px;
+  border: none;
+  border-radius: 4px;
 }

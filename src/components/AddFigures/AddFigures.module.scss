@@ -1,0 +1,23 @@
+@import '../../GlobalStyles.scss';
+
+.wrapper {
+  height: 200px;
+  overflow-y: scroll;
+  padding: 0 12px;
+  .picturesWrapper {
+    justify-content: space-between;
+  }
+
+  .lineWrapper {
+    align-items: center;
+    justify-content: space-between;
+
+    input {
+      margin-right: 16px;
+      width: 340px;
+    }
+    button {
+      margin-bottom: 0;
+    }
+  }
+}
