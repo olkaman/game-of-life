@@ -59,7 +59,7 @@ const blinker = {
 };
 
 const penthadecathlon = {
-  name: 'Penthadecathlon',
+  name: 'Pentha',
   link: penthadecathlonLink,
   shape: [
     [1, 1, 1],
@@ -146,11 +146,9 @@ const spaceshipL = {
     [0, 1, 1, 1, 1, 0, 0],
   ],
 };
-const line = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]];
 
 export const allFigures = {
   stillLives: [square, tub, beeHive, loaf],
   oscillators: [blinker, toad, pulsar, penthadecathlon],
   spaceships: [glider, spaceshipS, spaceshipM, spaceshipL],
-  lines: [],
 };

@@ -18,10 +18,16 @@
   &.primary {
     background-color: $light-mint;
     color: $white;
+
+    &:hover {
+      color: $light-mint;
+      background-color: $white;
+    }
   }
 
   &:hover {
-    opacity: 0.8;
+    background-color: $light-mint;
+    color: $white;
   }
 
   &:disabled {
