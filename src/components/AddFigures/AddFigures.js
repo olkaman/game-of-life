@@ -13,8 +13,7 @@ export default function AddFigures() {
   const setGrid = useGameStore((state) => state.setGrid);
   const [isFiguresPanelOpen, setIsFiguresPanelOpen] = useState(false);
   const [lineInputValue, setLineInputValue] = useState(3);
-  const [line, setLine] = useState([Array(3).fill(1)]);
-  console.log(lineInputValue, line);
+  const line = [Array(Number(lineInputValue)).fill(1)];
 
   function setFigure(figure) {
     setIsFiguresPanelOpen(false);
@@ -33,12 +32,6 @@ export default function AddFigures() {
 
     setGrid(newGrid);
   }
-
-  const setLineLength = (e) => {
-    setLineInputValue(e.target.value);
-    const line = [Array(Number(e.target.value)).fill(1)];
-    setLine(line);
-  };
 
   return (
     <>
@@ -66,7 +59,7 @@ export default function AddFigures() {
           <h5>Lines</h5>
           <div className={clsx(styles.lineWrapper, 'flex')}>
             {' '}
-            <input value={lineInputValue} onChange={setLineLength} placeholder='Enter line length' type='number' min='3' max={colCount} />
+            <input value={lineInputValue} onChange={(e) => setLineInputValue(e.target.value)} placeholder='Enter line length' type='number' min='3' max={colCount} />
             <Button handleClick={() => setFigure(line)} type='primary'>
               Create
             </Button>
