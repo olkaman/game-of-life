@@ -1,10 +1,17 @@
 import Square from '../Square/Square';
 import { rowCount, colCount, squareSize } from '../../utils/boardSize';
 import { useGameStore } from '../../store/store';
+import { useEffect } from 'react';
+import { useCreateGrid } from '../../hooks/useCreateGrid.js';
 
 function Board() {
   const grid = useGameStore((state) => state.grid);
   const setGrid = useGameStore((state) => state.setGrid);
+  const createGrid = useCreateGrid();
+
+  useEffect(() => {
+    setGrid(createGrid);
+  }, []);
 
   const setCellState = (x, y) => {
     const newGrid = [...grid];

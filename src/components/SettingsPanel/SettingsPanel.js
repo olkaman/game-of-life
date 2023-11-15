@@ -1,4 +1,3 @@
-import { useEffect, useState, useRef } from 'react';
 import Button from '../Button/Button';
 import styles from './SettingsPanel.module.scss';
 import { useGameStore } from '../../store/store';
