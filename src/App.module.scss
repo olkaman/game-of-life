@@ -4,10 +4,4 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   width: 100%;
-
-  .board {
-    width: calc(100% - $side-menu-width);
-    padding: 24px;
-    box-sizing: border-box;
-  }
 }

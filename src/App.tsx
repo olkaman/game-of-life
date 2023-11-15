@@ -9,13 +9,12 @@ function App() {
   // blinking dot
   // height of shapes container
   // color of play and pause
+  // unit tests
 
   return (
     <main className={clsx(styles.mainContainer, 'flex')}>
       <SettingsPanel />
-      <section className={styles.board}>
-        <Board />
-      </section>
+      <Board />
     </main>
   );
 }
