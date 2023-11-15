@@ -11,7 +11,13 @@ import spaceshipSLink from '../assets/spaceship1.svg';
 import spaceshipMLink from '../assets/spaceship2.svg';
 import spaceshipLLink from '../assets/spaceship3.svg';
 
-const square = {
+type Figure = {
+  name: string;
+  link: string;
+  shape: number[][];
+};
+
+const square: Figure = {
   name: 'Square',
   link: squareLink,
   shape: [
@@ -20,7 +26,7 @@ const square = {
   ],
 };
 
-const tub = {
+const tub: Figure = {
   name: 'Tub',
   link: tubLink,
   shape: [
@@ -30,7 +36,7 @@ const tub = {
   ],
 };
 
-const beeHive = {
+const beeHive: Figure = {
   name: 'Bee hive',
   link: beeHiveLink,
   shape: [
@@ -40,7 +46,7 @@ const beeHive = {
   ],
 };
 
-const loaf = {
+const loaf: Figure = {
   name: 'Loaf',
   link: loafLink,
   shape: [
@@ -51,13 +57,13 @@ const loaf = {
   ],
 };
 
-const blinker = {
+const blinker: Figure = {
   name: 'Blinker',
   link: blinkerLink,
   shape: [[1], [1], [1]],
 };
 
-const penthadecathlon = {
+const penthadecathlon: Figure = {
   name: 'Pentha',
   link: penthadecathlonLink,
   shape: [
@@ -72,7 +78,7 @@ const penthadecathlon = {
   ],
 };
 
-const toad = {
+const toad: Figure = {
   name: 'Toad',
   link: toadLink,
   shape: [
@@ -83,7 +89,7 @@ const toad = {
   ],
 };
 
-const glider = {
+const glider: Figure = {
   name: 'Glider',
   link: gliderLink,
   shape: [
@@ -93,7 +99,7 @@ const glider = {
   ],
 };
 
-const pulsar = {
+const pulsar: Figure = {
   name: 'Pulsar',
   link: pulsarLink,
   shape: [
@@ -113,7 +119,7 @@ const pulsar = {
   ],
 };
 
-const spaceshipS = {
+const spaceshipS: Figure = {
   name: 'Spaceship S',
   link: spaceshipSLink,
   shape: [
@@ -124,7 +130,7 @@ const spaceshipS = {
   ],
 };
 
-const spaceshipM = {
+const spaceshipM: Figure = {
   name: 'Spaceship M',
   link: spaceshipMLink,
   shape: [
@@ -135,7 +141,7 @@ const spaceshipM = {
   ],
 };
 
-const spaceshipL = {
+const spaceshipL: Figure = {
   name: 'Spaceship L',
   link: spaceshipLLink,
   shape: [
