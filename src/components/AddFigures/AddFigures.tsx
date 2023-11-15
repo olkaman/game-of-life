@@ -12,10 +12,10 @@ export default function AddFigures() {
   const grid = useGameStore((state) => state.grid);
   const setGrid = useGameStore((state) => state.setGrid);
   const [isFiguresPanelOpen, setIsFiguresPanelOpen] = useState(false);
-  const [lineInputValue, setLineInputValue] = useState(3);
+  const [lineInputValue, setLineInputValue] = useState<number>(3);
   const line = [Array(Number(lineInputValue)).fill(1)];
 
-  function setFigure(figure) {
+  function setFigure(figure: number[][]) {
     setIsFiguresPanelOpen(false);
     setLineInputValue(3);
     const halfBoardWidth = Math.ceil((colCount - figure[0].length) / 2);
@@ -35,7 +35,9 @@ export default function AddFigures() {
 
   return (
     <>
-      <Button handleClick={() => setIsFiguresPanelOpen(!isFiguresPanelOpen)}>{isFiguresPanelOpen ? '-' : '+'} Add figure</Button>
+      <Button handleClick={() => setIsFiguresPanelOpen(!isFiguresPanelOpen)}>
+        <>{isFiguresPanelOpen ? '-' : '+'} Add figure</>
+      </Button>
       {isFiguresPanelOpen && (
         <section className={styles.wrapper}>
           <h5>Still lives</h5>
@@ -59,7 +61,7 @@ export default function AddFigures() {
           <h5>Lines</h5>
           <div className={clsx(styles.lineWrapper, 'flex')}>
             {' '}
-            <input value={lineInputValue} onChange={(e) => setLineInputValue(e.target.value)} placeholder='Enter line length' type='number' min='3' max={colCount} />
+            <input value={lineInputValue} onChange={(e) => setLineInputValue(Number(e.target.value))} placeholder='Enter line length' type='number' min='3' max={colCount} />
             <Button handleClick={() => setFigure(line)} type='primary'>
               Create
             </Button>

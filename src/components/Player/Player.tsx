@@ -9,10 +9,10 @@ import pauseIcon from '../../assets/pause.svg';
 import clsx from 'clsx';
 
 function Player() {
-  const previousGrid = useRef();
-  const previousCounter = useRef();
-  const [timerId, setTimerId] = useState();
-  const [counter, setCounter] = useState(0);
+  const previousGrid = useRef<number[][]>([[]]);
+  const previousCounter = useRef<number>(0);
+  const [timerId, setTimerId] = useState<number>(0);
+  const [counter, setCounter] = useState<number>(0);
   const createGrid = useCreateGrid();
   const grid = useGameStore((state) => state.grid);
   const setGrid = useGameStore((state) => state.setGrid);
@@ -43,14 +43,14 @@ function Player() {
 
     setGrid(newGrid);
 
-    const timerId = setTimeout(() => {
+    const timerId = window.setTimeout(() => {
       playLifeGame();
     }, 400);
 
     setTimerId(timerId);
   };
 
-  const findNeighborsOfGivenCell = ([x, y]) => {
+  const findNeighborsOfGivenCell = ([x, y]: number[]) => {
     let neighborsCount = 0;
     possibleNeighbors.forEach((neighbor) => {
       const newX = x + neighbor[0];
@@ -65,7 +65,7 @@ function Player() {
   };
 
   const pauseGame = () => {
-    clearTimeout(timerId);
+    window.clearTimeout(timerId);
     setTimerId(0);
   };
 

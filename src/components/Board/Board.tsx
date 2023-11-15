@@ -13,7 +13,7 @@ function Board() {
     setGrid(createGrid);
   }, []);
 
-  const setCellState = (x, y) => {
+  const setCellState = (x: number, y: number) => {
     const newGrid = [...grid];
     newGrid[x][y] = newGrid[x][y] === 0 ? 1 : 0;
     setGrid(newGrid);
