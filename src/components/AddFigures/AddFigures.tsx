@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Button from '../Button/Button';
-import { allFigures } from '../../utils/figures.js';
+import { allFigures } from '../../utils/figures';
 import { rowCount, colCount } from '../../utils/boardSize';
 import styles from './AddFigures.module.scss';
 import FigureButton from '../FigureButton/FigureButton';

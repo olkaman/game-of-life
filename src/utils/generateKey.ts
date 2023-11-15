@@ -1,3 +1,3 @@
-export const generateKey = (prefix) => {
+export const generateKey = (prefix: string) => {
   return `${prefix}_${new Date().getTime()}`;
 };

@@ -1,4 +1,4 @@
-import { rowCount, colCount } from '../utils/boardSize.js';
+import { rowCount, colCount } from '../utils/boardSize';
 
 export const useCreateGrid = () => {
   const row = [];
