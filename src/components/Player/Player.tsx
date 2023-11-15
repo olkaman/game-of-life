@@ -11,7 +11,7 @@ import clsx from 'clsx';
 function Player() {
   const previousGrid = useRef<number[][]>([[]]);
   const previousCounter = useRef<number>(0);
-  const [timerId, setTimerId] = useState<number>(0);
+  const [timerId, setTimerId] = useState<number>(-1);
   const [counter, setCounter] = useState<number>(0);
   const createGrid = useCreateGrid();
   const grid = useGameStore((state) => state.grid);
@@ -66,7 +66,7 @@ function Player() {
 
   const pauseGame = () => {
     window.clearTimeout(timerId);
-    setTimerId(0);
+    setTimerId(-1);
   };
 
   const clearBoard = () => {
@@ -78,7 +78,7 @@ function Player() {
   return (
     <>
       <section className={clsx('flex', styles.playerBoard)}>
-        <button onClick={playLifeGame} disabled={timerId > 0} className={clsx(styles.buttons, styles.play)}>
+        <button onClick={playLifeGame} disabled={timerId > -1} className={clsx(styles.buttons, styles.play)}>
           <img src={playIcon} alt='gameOfLife' />
         </button>
         <button onClick={pauseGame} className={clsx(styles.buttons, styles.pause)}>
