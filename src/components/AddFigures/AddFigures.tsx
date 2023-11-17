@@ -34,12 +34,12 @@ export default function AddFigures() {
   }
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <Button handleClick={() => setIsFiguresPanelOpen(!isFiguresPanelOpen)}>
         <>{isFiguresPanelOpen ? '-' : '+'} Add figure</>
       </Button>
       {isFiguresPanelOpen && (
-        <section className={styles.wrapper}>
+        <section className={styles.buttonsWrapper}>
           <h5>Still lives</h5>
           <section className={clsx(styles.picturesWrapper, 'flex')}>
             {allFigures.stillLives.map((figure) => {
@@ -68,6 +68,6 @@ export default function AddFigures() {
           </div>
         </section>
       )}
-    </>
+    </div>
   );
 }

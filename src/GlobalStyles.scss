@@ -9,7 +9,7 @@ $side-menu-width: 300px;
 $main-font-family: 'Noto Sans', sans-serif;
 $text-color-on-dark: rgba(255, 255, 255, 0.8);
 $text-body-size: 14px;
-$text-small-size: 12px;
+$text-small-size: 11px;
 
 :export {
   squareSize: $square-size;
@@ -36,7 +36,7 @@ h2 {
 h5 {
   font-size: 14px;
   font-weight: 400;
-  margin-bottom: 12px;
+  margin: 12px 0;
 }
 
 p {

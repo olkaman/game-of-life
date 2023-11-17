@@ -1,23 +1,29 @@
 @import '../../GlobalStyles.scss';
 
 .wrapper {
-  height: 200px;
-  overflow-y: scroll;
-  padding: 0 12px;
-  .picturesWrapper {
-    justify-content: space-between;
-  }
+  width: 100%;
 
-  .lineWrapper {
-    align-items: center;
-    justify-content: space-between;
+  .buttonsWrapper {
+    height: calc(100vh - 500px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom: 24px;
 
-    input {
-      margin-right: 16px;
-      width: 340px;
+    .picturesWrapper {
+      justify-content: space-around;
     }
-    button {
-      margin-bottom: 0;
+
+    .lineWrapper {
+      align-items: center;
+      justify-content: space-between;
+
+      input {
+        margin-right: 16px;
+        width: 340px;
+      }
+      button {
+        margin-bottom: 0;
+      }
     }
   }
 }
