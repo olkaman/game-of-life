@@ -18,7 +18,6 @@ function Player() {
   const setGrid = useGameStore((state) => state.setGrid);
   const speed = useGameStore((state) => state.speed);
   const setIsGameOn = useGameStore((state) => state.setIsGameOn);
-  const isGameOn = useGameStore((state) => state.isGameOn);
 
   useEffect(() => {
     previousGrid.current = grid;
