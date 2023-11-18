@@ -5,12 +5,6 @@ import SettingsPanel from './components/SettingsPanel/SettingsPanel';
 import clsx from 'clsx';
 
 function App() {
-  // settings: speed and size of cells
-  // blinking dot
-  // height of shapes container
-  // color of play and pause
-  // unit tests
-
   return (
     <main className={clsx(styles.mainContainer, 'flex')}>
       <SettingsPanel />
