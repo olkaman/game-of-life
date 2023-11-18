@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 type Props = {
   children: JSX.Element | string;
-  handleClick: () => void;
+  handleClick?: () => void;
   disabled?: boolean;
   type?: string;
 };

@@ -16,6 +16,7 @@ function Player() {
   const createGrid = useCreateGrid();
   const grid = useGameStore((state) => state.grid);
   const setGrid = useGameStore((state) => state.setGrid);
+  const speed = useGameStore((state) => state.speed);
 
   useEffect(() => {
     previousGrid.current = grid;
@@ -45,7 +46,7 @@ function Player() {
 
     const timerId = window.setTimeout(() => {
       playLifeGame();
-    }, 400);
+    }, speed);
 
     setTimerId(timerId);
   };
@@ -89,6 +90,7 @@ function Player() {
         </button>
       </section>
       <section className={clsx(styles.counter, 'flex')}>
+        <span>Speed: {speed}</span>
         <span className={styles.circle}></span>
         <span>Number of cycles: {counter}</span>
       </section>

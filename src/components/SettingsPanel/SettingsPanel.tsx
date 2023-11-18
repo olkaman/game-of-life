@@ -4,6 +4,7 @@ import { useGameStore } from '../../store/store';
 import AddFigures from '../AddFigures/AddFigures';
 import Player from '../Player/Player';
 import clsx from 'clsx';
+import Settings from '../Settings/Settings';
 
 function SettingsPanel() {
   const grid = useGameStore((state) => state.grid);
@@ -39,10 +40,13 @@ function SettingsPanel() {
         </div>
 
         <aside>
-          Rules of{' '}
-          <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life' target='blank'>
-            Conway's Game of life
-          </a>
+          <Settings />
+          <span className={styles.rules}>
+            Rules of{' '}
+            <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life' target='blank'>
+              Conway's Game of life
+            </a>
+          </span>
         </aside>
       </div>
     </section>
