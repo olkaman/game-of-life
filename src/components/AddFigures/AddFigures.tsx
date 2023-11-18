@@ -60,9 +60,20 @@ export default function AddFigures() {
           </section>
           <h5>Lines</h5>
           <div className={clsx(styles.lineWrapper, 'flex')}>
-            {' '}
-            <input value={lineInputValue} onChange={(e) => setLineInputValue(e.target.value)} placeholder='Enter line length' type='number' min='3' max={colCount} />
-            <Button handleClick={() => setFigure(line)} type='primary'>
+            <span className={styles.input}>
+              <label htmlFor='lineLength'>Line length</label>
+              <input
+                id='lineLength'
+                value={lineInputValue}
+                onChange={(e) => setLineInputValue(e.target.value)}
+                placeholder='Enter line length'
+                type='number'
+                min='3'
+                max={colCount}
+              />
+            </span>
+
+            <Button handleClick={() => setFigure(line)} type='primary' disabled={Number(lineInputValue) < 3 || Number(lineInputValue) > colCount}>
               Create
             </Button>
           </div>

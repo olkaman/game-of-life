@@ -14,13 +14,20 @@
     }
 
     .lineWrapper {
-      align-items: center;
+      align-items: flex-end;
       justify-content: space-between;
 
-      input {
-        margin-right: 16px;
-        width: 340px;
+      .input {
+        label {
+          font-size: $text-small-size;
+        }
+
+        input {
+          margin-right: 16px;
+          width: 100px;
+        }
       }
+
       button {
         margin-bottom: 0;
       }
