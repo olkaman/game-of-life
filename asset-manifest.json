@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/game-of-life/static/css/main.6537ab29.css",
-    "main.js": "/game-of-life/static/js/main.bfccf1be.js",
+    "main.css": "/game-of-life/static/css/main.39ce6f6c.css",
+    "main.js": "/game-of-life/static/js/main.4c72e7c4.js",
     "static/media/background.jpg": "/game-of-life/static/media/background.1e323ab5444f5b51b748.jpg",
     "static/media/pulsar.svg": "/game-of-life/static/media/pulsar.b3bc5fa1345bf101070fa8b4261300f2.svg",
     "static/media/penthadecathlon.svg": "/game-of-life/static/media/penthadecathlon.0a20b8bdb401a9c8a256b653ee297cd7.svg",
@@ -14,15 +14,15 @@
     "static/media/tub.svg": "/game-of-life/static/media/tub.16a87cae527f0a5e03f9602efd0771de.svg",
     "static/media/square.svg": "/game-of-life/static/media/square.a9ecdfec29d44f083ebe95fa34a30546.svg",
     "static/media/glider.svg": "/game-of-life/static/media/glider.4a7bd5a650319d9695f0064f9b83b759.svg",
-    "static/media/pause.svg": "/game-of-life/static/media/pause.5a5b1a7ad78016723d014fe41ed3ca16.svg",
+    "static/media/pause.svg": "/game-of-life/static/media/pause.a4be0d77fe7270a339b065f319155437.svg",
     "static/media/blinker.svg": "/game-of-life/static/media/blinker.2ccd1a5f33094ac41d1c96894e5b3a65.svg",
     "index.html": "/game-of-life/index.html",
     "static/media/play.svg": "/game-of-life/static/media/play.e8bd115217fc92f92103d1282c7a7ef9.svg",
-    "main.6537ab29.css.map": "/game-of-life/static/css/main.6537ab29.css.map",
-    "main.bfccf1be.js.map": "/game-of-life/static/js/main.bfccf1be.js.map"
+    "main.39ce6f6c.css.map": "/game-of-life/static/css/main.39ce6f6c.css.map",
+    "main.4c72e7c4.js.map": "/game-of-life/static/js/main.4c72e7c4.js.map"
   },
   "entrypoints": [
-    "static/css/main.6537ab29.css",
-    "static/js/main.bfccf1be.js"
+    "static/css/main.39ce6f6c.css",
+    "static/js/main.4c72e7c4.js"
   ]
 }
