@@ -17,6 +17,8 @@ function Player() {
   const grid = useGameStore((state) => state.grid);
   const setGrid = useGameStore((state) => state.setGrid);
   const speed = useGameStore((state) => state.speed);
+  const setIsGameOn = useGameStore((state) => state.setIsGameOn);
+  const isGameOn = useGameStore((state) => state.isGameOn);
 
   useEffect(() => {
     previousGrid.current = grid;
@@ -25,6 +27,7 @@ function Player() {
 
   const playLifeGame = () => {
     // TODO grid does noti include 1 return
+    setIsGameOn(true);
     setCounter(previousCounter.current + 1);
     const newGrid = previousGrid.current.map((arr) => {
       return arr.slice();
@@ -74,6 +77,7 @@ function Player() {
     pauseGame();
     setGrid(createGrid);
     setCounter(0);
+    setIsGameOn(false);
   };
 
   return (
@@ -82,7 +86,7 @@ function Player() {
         <button onClick={playLifeGame} disabled={timerId > -1} className={clsx(styles.buttons, styles.play)}>
           <img src={playIcon} alt='gameOfLife' />
         </button>
-        <button onClick={pauseGame} className={clsx(styles.buttons, styles.pause)}>
+        <button onClick={pauseGame} className={clsx(styles.buttons, styles.pause)} disabled={timerId === -1}>
           <img src={pauseIcon} alt='gameOfLife' />
         </button>
         <button onClick={clearBoard} className={clsx(styles.buttons, styles.clear)}>

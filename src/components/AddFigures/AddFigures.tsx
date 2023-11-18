@@ -11,6 +11,7 @@ import clsx from 'clsx';
 export default function AddFigures() {
   const grid = useGameStore((state) => state.grid);
   const setGrid = useGameStore((state) => state.setGrid);
+  const isGameOn = useGameStore((state) => state.isGameOn);
   const [isFiguresPanelOpen, setIsFiguresPanelOpen] = useState<boolean>(false);
   const [lineInputValue, setLineInputValue] = useState<string>('3');
   const line = [Array(Number(lineInputValue)).fill(1)];
@@ -35,7 +36,7 @@ export default function AddFigures() {
 
   return (
     <div className={styles.wrapper}>
-      <Button handleClick={() => setIsFiguresPanelOpen(!isFiguresPanelOpen)}>
+      <Button handleClick={() => setIsFiguresPanelOpen(!isFiguresPanelOpen)} disabled={isGameOn}>
         <>{isFiguresPanelOpen ? '-' : '+'} Add figure</>
       </Button>
       {isFiguresPanelOpen && (

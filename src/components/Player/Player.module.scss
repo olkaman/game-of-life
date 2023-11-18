@@ -23,6 +23,7 @@
         position: absolute;
         top: 10px;
         left: 15px;
+        fill: red;
       }
 
       &:disabled {
@@ -40,6 +41,11 @@
         position: absolute;
         top: 13px;
         left: 14px;
+      }
+
+      &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
       }
     }
 

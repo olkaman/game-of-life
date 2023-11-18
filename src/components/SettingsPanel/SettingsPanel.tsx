@@ -9,6 +9,7 @@ import Settings from '../Settings/Settings';
 function SettingsPanel() {
   const grid = useGameStore((state) => state.grid);
   const setGrid = useGameStore((state) => state.setGrid);
+  const isGameOn = useGameStore((state) => state.isGameOn);
 
   const setRandomCells = () => {
     const newGrid = [...grid];
@@ -34,7 +35,9 @@ function SettingsPanel() {
           </section>
           <Player />
           <section className={styles.buttons}>
-            <Button handleClick={setRandomCells}>Set random cells</Button>
+            <Button handleClick={setRandomCells} disabled={isGameOn}>
+              Set random cells
+            </Button>
             <AddFigures />
           </section>
         </div>

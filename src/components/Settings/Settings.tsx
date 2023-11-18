@@ -8,6 +8,7 @@ export default function Settings() {
   const [areSettingsOpen, setAreSettingsOpen] = useState<boolean>(false);
   const [gameSpeed, setGameSpeed] = useState<string>('400');
   const setSpeed = useGameStore((state) => state.setSpeed);
+  const isGameOn = useGameStore((state) => state.isGameOn);
 
   const handleSettingsChange = (e: any) => {
     e.preventDefault();
@@ -17,7 +18,7 @@ export default function Settings() {
 
   return (
     <div className={styles.wrapper}>
-      <Button handleClick={() => setAreSettingsOpen(!areSettingsOpen)}>
+      <Button handleClick={() => setAreSettingsOpen(!areSettingsOpen)} disabled={isGameOn}>
         <>{areSettingsOpen ? '-' : '+'} Settings</>
       </Button>
       {areSettingsOpen && (
