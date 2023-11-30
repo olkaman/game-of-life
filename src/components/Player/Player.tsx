@@ -10,7 +10,6 @@ import clsx from 'clsx';
 
 function Player() {
   const previousGrid = useRef<number[][]>([[]]);
-  const previousCounter = useRef<number>(0);
   const [timerId, setTimerId] = useState<number>(-1);
   const [counter, setCounter] = useState<number>(0);
   const createGrid = useCreateGrid();
@@ -21,24 +20,25 @@ function Player() {
 
   useEffect(() => {
     previousGrid.current = grid;
-    previousCounter.current = counter;
-  }, [grid, counter]);
+  }, [grid]);
 
   const playLifeGame = () => {
     // TODO grid does noti include 1 return
     setIsGameOn(true);
-    setCounter(previousCounter.current + 1);
+    setCounter((prevCount) => prevCount + 1);
+
     const newGrid = previousGrid.current.map((arr) => {
       return arr.slice();
     });
-    previousGrid.current.forEach((row, rowIndex) => {
-      row.forEach((cell, colIndex) => {
-        const neighbors = findNeighborsOfGivenCell([rowIndex, colIndex]);
 
-        if (neighbors < 2 || neighbors > 3) {
+    newGrid.forEach((row, rowIndex) => {
+      row.forEach((_, colIndex) => {
+        const neighborsCount = findNeighborsNumberOfGivenCell([rowIndex, colIndex]);
+
+        if (neighborsCount < 2 || neighborsCount > 3) {
           newGrid[rowIndex][colIndex] = 0;
         }
-        if (previousGrid.current[rowIndex][colIndex] === 0 && neighbors === 3) {
+        if (newGrid[rowIndex][colIndex] === 0 && neighborsCount === 3) {
           newGrid[rowIndex][colIndex] = 1;
         }
       });
@@ -53,7 +53,7 @@ function Player() {
     setTimerId(timerId);
   };
 
-  const findNeighborsOfGivenCell = ([x, y]: number[]) => {
+  const findNeighborsNumberOfGivenCell = ([x, y]: number[]) => {
     let neighborsCount = 0;
     possibleNeighbors.forEach((neighbor) => {
       const newX = x + neighbor[0];
