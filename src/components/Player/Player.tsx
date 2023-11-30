@@ -46,11 +46,11 @@ function Player() {
 
     setGrid(newGrid);
 
-    const timerId = window.setTimeout(() => {
+    const timer = window.setTimeout(() => {
       playLifeGame();
     }, speed);
 
-    setTimerId(timerId);
+    setTimerId(timer);
   };
 
   const findNeighborsNumberOfGivenCell = ([x, y]: number[]) => {
